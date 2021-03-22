@@ -12,3 +12,26 @@ HTree::path_to(key_t key) const
 {
   return nullptr;
 }
+
+HTree::key_t HTree::get_key() const    //do we need to specify namespace for the functions?
+{
+  return this->key;
+}
+HTree::value_t HTree::get_value() const
+{
+  return this->value;
+}
+
+HTree::tree_ptr_t HTree::get_child(Direction dir) const
+{
+  switch (dir){
+    case "Left":
+      return this->left;
+
+    case "Right":
+      return this->right;
+
+    default:
+      return nullptr;
+  }
+}
