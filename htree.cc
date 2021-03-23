@@ -30,28 +30,7 @@ HTree::path_to(key_t key) const
     return nullptr;
   }
 }
-//
-// std::string path_to(tree_ptr_t tree, key_type key)
-// {
-//   if (!tree) {
-//     return "-";
-//   }
-//
-//   if (tree->key_ == key) {
-//     return "";
-//   }
-//
-//   const auto left_res = path_to(tree->left_, key);
-//   if (left_res != "-") {
-//     return "L" + left_res;
-//   }
-//   const auto right_res = path_to(tree->right_, key);
-//   if (right_res == "-") {
-//     return "-";
-//   } else {
-//     return "R" + right_res;
-//   }
-// }
+
 HTree::key_t HTree::get_key() const    //do we need to specify namespace for the functions?
 {
   return this->key;
