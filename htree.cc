@@ -13,22 +13,24 @@ HTree::path_to(key_t key) const
   if (!this){
     return nullptr
   }
-  if (this.get_key() == key){
+  if (this->get_key() == key){
     return {};
   }
-  const auto left_res = path_to(this.get_child("LEFT"), key);
-  if left_res {
-    std::list return_list = {LEFT};
+  const auto left_res = path_to(this.get_child(Direction dir = LEFT), key);
+  if (left_res) {
+    std::list return_list = {Direction dir = LEFT};
     return return_list.splice(return_list.end(), left_res);
   }
 
-  const auto right_res = path_to(this.get_child("RIGHT"), key);
-  if right_res {
+  const auto right_res = path_to(this.get_child(RIGHT), key);
+  if (right_res) {
     std::list return_list = {RIGHT};
     return return_list.splice(return_list.end(), right_res);
   } else{
     return nullptr;
   }
+
+  return nullptr;
 }
 
 HTree::key_t HTree::get_key() const    //do we need to specify namespace for the functions?
@@ -43,10 +45,10 @@ HTree::value_t HTree::get_value() const
 HTree::tree_ptr_t HTree::get_child(Direction dir) const
 {
   switch (dir){
-    case "LEFT":
+    case LEFT:
       return this->left;
 
-    case "RIGHT":
+    case RIGHT:
       return this->right;
 
     default:
