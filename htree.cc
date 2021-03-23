@@ -16,15 +16,16 @@ HTree::path_to(key_t key) const
   if (this->get_key() == key){
     return {};
   }
-  const auto left_res = path_to(this.get_child(Direction dir = LEFT), key);
+  Direction dirLeft = LEFT;
+  const auto left_res = path_to(this.get_child(dirLeft), key);
   if (left_res) {
-    std::list return_list = {Direction dir = LEFT};
+    std::list return_list = {dirLeft};
     return return_list.splice(return_list.end(), left_res);
   }
-
-  const auto right_res = path_to(this.get_child(RIGHT), key);
+  Direction dirRight = RIGHT;
+  const auto right_res = path_to(this.get_child(dirRight), key);
   if (right_res) {
-    std::list return_list = {RIGHT};
+    std::list return_list = {dirRight};
     return return_list.splice(return_list.end(), right_res);
   } else{
     return nullptr;
