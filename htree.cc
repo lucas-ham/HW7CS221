@@ -10,7 +10,25 @@
 HTree::possible_path_t
 HTree::path_to(key_t key) const
 {
-  if this;
+  if (!this){
+    return nullptr
+  }
+  if (this.get_key() == key){
+    return {};
+  }
+  const auto left_res = path_to(this.get_child("LEFT"), key);
+  if left_res {
+    std::list return_list = {LEFT};
+    return return_list.splice(return_list.end(), left_res);
+  }
+
+  const auto right_res = path_to(this.get_child("RIGHT"), key);
+  if right_res {
+    std::list return_list = {RIGHT};
+    return return_list.splice(return_list.end(), right_res);
+  } else{
+    return nullptr;
+  }
 }
 //
 // std::string path_to(tree_ptr_t tree, key_type key)
@@ -46,10 +64,10 @@ HTree::value_t HTree::get_value() const
 HTree::tree_ptr_t HTree::get_child(Direction dir) const
 {
   switch (dir){
-    case "Left":
+    case "LEFT":
       return this->left;
 
-    case "Right":
+    case "RIGHT":
       return this->right;
 
     default:
