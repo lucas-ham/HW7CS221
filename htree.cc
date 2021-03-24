@@ -53,8 +53,8 @@ HTree::value_t HTree::get_value() const
 
 HTree::tree_ptr_t HTree::get_child(Direction dir) const
 {
-  const Direction dirLeft = Direction LEFT;
-  const Direction dirRight = Direction Right;
+  const Direction dirLeft = Direction::LEFT;
+  const Direction dirRight = Direction::RIGHT;
   switch (dir){
     case dirLeft:
       return this->left;
