@@ -23,8 +23,8 @@ HTree::path_to(key_t key) const
     const auto left_res = this->get_child(dirLeft)->path_to(key);
     if (left_res) {
       std::list return_list = {dirLeft};
-      return return_list.splice(return_list.end(), left_res);
-      //return left_res.insert(left_res.begin(), 1 , dirLeft);
+      return_list.splice(return_list.end(), *left_res);
+      return return_list;
     }
   }
 
@@ -35,7 +35,8 @@ HTree::path_to(key_t key) const
     const auto right_res = this->get_child(dirRight)->path_to(key);
     if (right_res) {
       std::list return_list = {dirRight};
-      return return_list.splice(return_list.end(), right_res);
+      return_list.splice(return_list.end(), *right_res);
+      return return_list;
     }
   }
 
