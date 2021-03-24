@@ -32,7 +32,7 @@ HTree::path_to(key_t key) const
   Direction dirRight = Direction::RIGHT;
   tree_ptr_t rightChild = this->get_child(dirRight);
   if (rightChild) {
-    const auto right_res = this->get_child(dirRight).path_to(key);
+    const auto right_res = this->get_child(dirRight)->path_to(key);
     if (right_res) {
       std::list return_list = {dirRight};
       return return_list.splice(return_list.end(), right_res);
