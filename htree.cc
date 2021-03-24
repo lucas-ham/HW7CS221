@@ -22,9 +22,11 @@ HTree::path_to(key_t key) const
   if (leftChild){
     const auto left_res = this->get_child(dirLeft)->path_to(key);
     if (left_res) {
-      std::list return_list = {dirLeft};
-      return_list.splice(return_list.end(), *left_res);
-      return return_list;
+      //std::list return_list = {dirLeft};
+      possible_path_t return_ptr;
+      *return_ptr = {dirLeft};//path_t<Direction>{dirLeft}
+      *return_ptr.splice(return_ptr.end(), *left_res);
+      return return_ptr;
     }
   }
 
