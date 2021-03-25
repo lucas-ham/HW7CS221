@@ -4,6 +4,7 @@
 #include <memory>
 
 
+
 class Hforest{
   public:
     using size_t = uint64_t;
@@ -17,4 +18,4 @@ class Hforest{
     tree_ptr_t heaparray [size];
 
     // std::make_heap(first,last)
-}
+};
