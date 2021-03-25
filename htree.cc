@@ -73,3 +73,11 @@ HTree::tree_ptr_t HTree::get_child(Direction dir) const
       return nullptr;
   }
 }
+
+HTree::HTree(key_t key,
+      value_t value,
+      tree_ptr_t left,
+      tree_ptr_t right)
+      : key(key), value(value), left(left), right(right)
+       {
+       }
