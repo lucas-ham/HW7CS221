@@ -2,7 +2,7 @@
 
 #include <list>
 #include <memory>
-
+#include "htree.hh" //come back to this, should probably remove (?)
 
 
 class Hforest{
@@ -13,8 +13,15 @@ class Hforest{
     void add_tree(tree_ptr_t tree);
     tree_ptr_t pop_tree();
   private:
-    size_t size;
-    tree_ptr_t heaparray [size];
+    size_t size_;
+    tree_ptr_t heaparray_ [];
+
+    //how do we initialize an array without really specifying size?
+      //ie for heaparray_, needs to be declared but dont' really wanna declare it
+    //linking HTree to this file? Using compiler isn't working at the moment
+      //do we need to use Makefile?
+      //is including htree.hh wrong?
+
 
     // std::make_heap(first,last)
 };

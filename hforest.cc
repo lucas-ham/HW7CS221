@@ -2,7 +2,7 @@
 
 
 Hforest::Hforest(size_t size)
-  : size(size)
+  : size_(size)
   {
-  heaparray = tree_ptr_t array [size];
+  heaparray_ = tree_ptr_t array [size];
 }
