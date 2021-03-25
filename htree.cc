@@ -73,7 +73,3 @@ HTree::tree_ptr_t HTree::get_child(Direction dir) const
       return nullptr;
   }
 }
-
-int main() {
-  return 0;
-}
