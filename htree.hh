@@ -13,7 +13,6 @@ class HTree {
   using tree_ptr_t = std::shared_ptr<const HTree>;
   enum class Direction { LEFT, RIGHT };
   using path_t = std::list<Direction>;
-  // using std::unique_ptr<path_t> = possible_path_t;
   using possible_path_t = std::unique_ptr<path_t>;
   using key_t = int;
   using value_t = uint64_t;
