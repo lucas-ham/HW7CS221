@@ -3,16 +3,16 @@ CXXFLAGS=-Wall -Wextra -pedantic -Werror -std=c++17 -O0 -g
 LDFLAGS=$(CXXFLAGS)
 OBJ=$(SRC:.cc=.o)
 
-all:  test_tree 
+all:  test_htree 
 
-test_tree: test_tree.o tree.o
+test_tree: test_htree.o htree.o
 	$(CXX) $(LDFLAGS) -o $@ $^
 
 %.o: %.cc %.hh
 	$(CXX) $(CXXFLAGS) $(OPTFLAGS) -c -o $@ $<
 
 clean:
-	rm -rf *.o test_tree
+	rm -rf *.o test_htree
 
 test: all
-	./test_tree
+	./test_htree
