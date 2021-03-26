@@ -16,7 +16,7 @@ HTree::tree_ptr_t create_test_tree()
 
 void test_htree(const HTree::tree_ptr_t root)
 {
-  assert(*(root->path_to(126)) == path_t({ }));
+  assert(*(root->path_to(126)) == HTree::path_t({ }));
 }
 
 int main()
@@ -26,4 +26,3 @@ int main()
 
   return 0;
 }
-

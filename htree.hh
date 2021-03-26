@@ -32,7 +32,7 @@ class HTree {
 
   // Return an optional list of directions from root to a node of a given key.
   // If key not contained in this tree, returns nullptr
-  possible_path_t path_to(key_t key) const
+  possible_path_t path_to(key_t key) const;
 private:
   key_t key;
   value_t value;
