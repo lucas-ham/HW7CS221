@@ -14,7 +14,8 @@ class Hforest{
     tree_ptr_t pop_tree();
   private:
     size_t size_;
-    tree_ptr_t heaparray_ [];
+    //tree_ptr_t heaparray_ [];
+    vector<tree_ptr_t> forest_vect;
 
     //how do we initialize an array without really specifying size?
       //ie for heaparray_, needs to be declared but dont' really wanna declare it
