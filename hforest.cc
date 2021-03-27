@@ -1,6 +1,6 @@
 #include "hforest.hh"
 
-bool compare_trees(tree_ptr_t t1, tree_ptr_t t2) {
+bool compare_trees(Hforest::tree_ptr_t t1, Hforest::tree_ptr_t t2) {
 
     return t1->get_value() < t2->get_value();
 
