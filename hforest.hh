@@ -15,7 +15,7 @@ class Hforest{
     int size();
   private:
     //tree_ptr_t heaparray_ [];
-    vector<tree_ptr_t> forest_vect;
+    std::vector<tree_ptr_t> forest_vect;
 
     //how do we initialize an array without really specifying size?
       //ie for heaparray_, needs to be declared but dont' really wanna declare it
