@@ -15,8 +15,8 @@ void Hforest::add_tree(tree_ptr_t tree) {
   std::make_heap(forest_vect.begin(), forest_vect.end(), compare_trees);
 }
 
-tree_ptr_t Hforest::pop_tree() {
-  tree_ptr_t highest = forest_vect[0];
+Hforest::tree_ptr_t Hforest::pop_tree() {
+  Hforest::tree_ptr_t highest = forest_vect[0];
   std::pop_heap(forest_vect.begin(), forest_vect.end());
   return highest;
 }
