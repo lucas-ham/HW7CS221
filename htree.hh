@@ -16,7 +16,7 @@ class HTree {
   using possible_path_t = std::unique_ptr<path_t>;
   using key_t = int;
   using value_t = uint64_t;
-  ~HTree();
+  ~HTree() = default;
   // Initialize with a key and a value:
   HTree(key_t key,
         value_t value,

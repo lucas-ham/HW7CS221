@@ -23,7 +23,7 @@ class Hforest{
     //linking HTree to this file? Using compiler isn't working at the moment
       //do we need to use Makefile?
       //is including htree.hh wrong?
-
+      
 
     // std::make_heap(first,last)
 };
