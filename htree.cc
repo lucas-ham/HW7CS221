@@ -11,7 +11,7 @@ HTree::possible_path_t
 HTree::path_to(key_t key) const
 {
   if (this->get_key() == key){
-    return {};
+    return possible_path_t(new path_t());
   }
   Direction dirLeft = Direction::LEFT;
   tree_ptr_t leftChild = this->get_child(dirLeft);
@@ -19,7 +19,6 @@ HTree::path_to(key_t key) const
   if (leftChild){
     const auto left_res = this->get_child(dirLeft)->path_to(key);
     if (left_res) {
-      //std::list return_list = {dirLeft};
       possible_path_t return_ptr;
       *return_ptr = {dirLeft};
       return_ptr->splice(return_ptr->end(), *left_res);
