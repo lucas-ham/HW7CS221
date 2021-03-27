@@ -2,6 +2,7 @@
 
 #include <list>
 #include <memory>
+#include <vector>
 #include "htree.hh" //come back to this, should probably remove (?)
 
 
