@@ -22,9 +22,7 @@ HTree::path_to(key_t key) const
       return left_res;
     }
   }
-  }
-
-
+  
   Direction dirRight = Direction::RIGHT;
   tree_ptr_t rightChild = get_child(dirRight);
   if (rightChild) {
