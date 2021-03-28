@@ -10,32 +10,28 @@
 HTree::possible_path_t
 HTree::path_to(key_t key) const
 {
-  if (this->get_key() == key){
+  if (get_key() == key){
     return possible_path_t(new path_t());
   }
   Direction dirLeft = Direction::LEFT;
-  tree_ptr_t leftChild = this->get_child(dirLeft);
-
+  tree_ptr_t leftChild = get_child(dirLeft);
   if (leftChild){
-    const auto left_res = this->get_child(dirLeft)->path_to(key);
+    auto left_res = get_child(dirLeft)->path_to(key);
     if (left_res) {
-      possible_path_t return_ptr;
-      *return_ptr = {dirLeft};
-      return_ptr->splice(return_ptr->end(), *left_res);
-      return return_ptr;
+      left_res->push_front(dirLeft);
+      return left_res;
     }
+  }
   }
 
 
   Direction dirRight = Direction::RIGHT;
-  tree_ptr_t rightChild = this->get_child(dirRight);
+  tree_ptr_t rightChild = get_child(dirRight);
   if (rightChild) {
-    const auto right_res = this->get_child(dirRight)->path_to(key);
+    auto right_res = get_child(dirRight)->path_to(key);
     if (right_res) {
-      possible_path_t return_ptr;
-      *return_ptr = {dirRight};
-      return_ptr->splice(return_ptr->end(), *right_res);
-      return return_ptr;
+      right_res->push_front(dirRight);
+      return right_res;
     }
   }
 
@@ -44,11 +40,11 @@ HTree::path_to(key_t key) const
 
 HTree::key_t HTree::get_key() const    //do we need to specify namespace for the functions?
 {
-  return this->key;
+  return key;
 }
 HTree::value_t HTree::get_value() const
 {
-  return this->value;
+  return value;
 }
 
 HTree::tree_ptr_t HTree::get_child(Direction dir) const
@@ -57,10 +53,10 @@ HTree::tree_ptr_t HTree::get_child(Direction dir) const
   const Direction dirRight = Direction::RIGHT;
   switch (dir){
     case dirLeft:
-      return this->left;
+      return left;
 
     case dirRight:
-      return this->right;
+      return right;
 
     default:
       return nullptr;

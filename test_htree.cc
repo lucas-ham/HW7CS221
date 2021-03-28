@@ -36,9 +36,9 @@ void test_htree(const HTree::tree_ptr_t root)
 {
   assert(*(root->path_to(126)) == HTree::path_t({ }));
 
-  assert(*(root->path_to(50)) == HTree::path_t{ HTree::Direction::LEFT } ); 
+  assert(*(root->path_to(50)) == HTree::path_t({ HTree::Direction::LEFT }) ); 
 
-//  assert(*(root->path_to(40)) == HTree::path_t({HTree::Direction::RIGHT, HTree::Direction::LEFT}));
+  assert(*(root->path_to(40)) == HTree::path_t({HTree::Direction::RIGHT, HTree::Direction::LEFT}));
 
   assert((root->get_child(HTree::Direction::LEFT))->get_key()  == 50);
 
