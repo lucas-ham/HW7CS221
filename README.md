@@ -16,7 +16,7 @@ For **hforest.cc**, `add_tree` adds a tree to the vector representing our forest
 - It also tests `get_child` on a deep path and a simple path, which we then run the `get_key` method on to verify the result.
 - Finally, it tests `get_value` on two nodes - one deeper than the other
 
-**test_forest** constructs a forest with 4 trees, and then performs the following tests:
+**test_hforest** constructs a forest with 4 trees, and then performs the following tests:
 
 - It checks that the size of the forest is 4
 - It tests `pop_tree` by popping a tree and checking its key
