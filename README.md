@@ -1,3 +1,7 @@
+CAN'T SEE THE FOREST FOR THE TREES
+==================================
+Lucas Hamilton and Harrison Nicholls
+------------------------------------
 In order to build our program, just run make in our project's directory.
 "make test" will run our tests. We have a separate test file for hforest and htree.
 
