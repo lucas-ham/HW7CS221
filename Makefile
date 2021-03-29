@@ -21,4 +21,7 @@ clean:
 test: all
 	./test_htree
 	./test_hforest
-
+testT: test_htree
+	./test_htree
+testF: test_hForest
+	./test_hforest
