@@ -11,10 +11,10 @@ Hforest::Hforest()
 {}
 
 int Hforest::size() {
-  return forest_vect.size(); 
+  return forest_vect.size();
 }
 
-oid Hforest::add_tree(tree_ptr_t tree) { 				//doesn't care if the forest is empty or not, still works on an empty forest
+void Hforest::add_tree(tree_ptr_t tree) { 				//doesn't care if the forest is empty or not, still works on an empty forest
   forest_vect.push_back(tree);							//add to the vector aribtrarily
   std::make_heap(forest_vect.begin(), forest_vect.end(), compare_trees);	//this makes the entire vector into a heap, only one element that isn't already organized into the heap
 }
