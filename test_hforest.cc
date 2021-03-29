@@ -27,4 +27,3 @@ int main() {
 	test_forest(forest);
 	return 0;
 }
-

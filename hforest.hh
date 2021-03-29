@@ -18,5 +18,5 @@ class Hforest{
 		Hforest();
 		~Hforest() = default;
   private:
-    std::vector<tree_ptr_t> forest_vect;
+    std::vector<tree_ptr_t> forest_vect;  //Initialize a vector which will be made into a heap later - vector allows size change
 };

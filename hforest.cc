@@ -25,5 +25,5 @@ Hforest::tree_ptr_t Hforest::pop_tree() {
   }
   Hforest::tree_ptr_t highest = forest_vect[0];			//heap is sorted, so the highest tree starts in the 0 index
   std::pop_heap(forest_vect.begin(), forest_vect.end());	//pop_heap keeps the heap structure intact while removing the highest element
-  return highest;						//heap structure means we always know what will have the highest value
+  return highest;	// max heap has highest valued tree at 0 index
 }
