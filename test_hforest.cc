@@ -9,11 +9,11 @@
 //Hforest::forest_ptr_t create_forest(){
 Hforest create_forest(){
 	//Hforest::forest_ptr_t forest = std::make_shared<new Hforest>; 		//intialize forest
-	auto forest = Hforest(); 
-	forest.add_tree(std::make_shared<HTree>(1, 10));
-	forest.add_tree(std::make_shared<HTree>(2, 20));
-	forest.add_tree(std::make_shared<HTree>(3, 5));
-	forest.add_tree(std::make_shared<HTree>(4, 50));  			//add trees, this also tests the add_tree method
+	auto forest = Hforest();
+	forest.add_tree(std::make_shared<HTree>(1, 10, nullptr, nullptr));
+	forest.add_tree(std::make_shared<HTree>(2, 20, nullptr, nullptr));
+	forest.add_tree(std::make_shared<HTree>(3, 5, nullptr, nullptr));
+	forest.add_tree(std::make_shared<HTree>(4, 50, nullptr, nullptr));  			//add trees, this also tests the add_tree method
 
 	return forest;
 
