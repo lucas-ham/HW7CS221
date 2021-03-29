@@ -6,9 +6,11 @@ bool compare_trees(Hforest::tree_ptr_t t1, Hforest::tree_ptr_t t2) {
 
 }
 
-//Hforest::Hforest()
-//	: forest_vect({})
-//{}
+Hforest::Hforest() {}
+
+Hforest::Hforest(tree_ptr_t tree){
+	add_tree(tree);
+}
 
 int Hforest::size() {
   return forest_vect.size();

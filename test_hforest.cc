@@ -6,19 +6,21 @@
 #include <iostream>
 
 
-Hforest::forest_ptr_t create_forest(){
-	Hforest::forest_ptr_t forest = std::make_shared<Hforest>; 		//intialize forest
-	forest->add_tree(std::make_shared<HTree>(1, 10));
-	forest->add_tree(std::make_shared<HTree>(2, 20));
-	forest->add_tree(std::make_shared<HTree>(3, 5));
-	forest->add_tree(std::make_shared<HTree>(4, 50));
+//Hforest::forest_ptr_t create_forest(){
+Hforest create_forest(){
+	//Hforest::forest_ptr_t forest = std::make_shared<new Hforest>; 		//intialize forest
+	auto forest = Hforest(); 
+	forest.add_tree(std::make_shared<HTree>(1, 10));
+	forest.add_tree(std::make_shared<HTree>(2, 20));
+	forest.add_tree(std::make_shared<HTree>(3, 5));
+	forest.add_tree(std::make_shared<HTree>(4, 50));
 
 	return forest;
 
 }
 
-void test_forest(Hforest::forest_ptr_t frst){
-	assert((frst->pop_tree())->get_key() == 4);
+void test_forest(Hforest frst){
+	assert((frst.pop_tree())->get_key() == 4);
 }
 
 
