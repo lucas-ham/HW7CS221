@@ -1,4 +1,4 @@
-CAN'T SEE THE FOREST FOR THE TREES
+Can't see the forest for the trees
 ==================================
 Lucas Hamilton and Harrison Nicholls
 ------------------------------------
