@@ -17,7 +17,7 @@ class Hforest{
     int size();
 		Hforest();												//constructor with no trees as input
 		Hforest(tree_ptr_t tree);					//constructor with an intial tree
-//		~Hforest() = default;
+		~Hforest() = default;
   private:
     std::vector<tree_ptr_t> forest_vect;  //Initialize a vector which will be made into a heap later - vector allows size change
 };
