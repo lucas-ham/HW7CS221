@@ -7,7 +7,7 @@
 
 
 Hforest::forest_ptr_t create_forest(){
-	Hforest::forest_ptr_t forest = std::make_shared<Hforest>(); 		//intialize forest
+	Hforest::forest_ptr_t forest = std::make_shared<Hforest>; 		//intialize forest
 	forest->add_tree(std::make_shared<HTree>(1, 10));
 	forest->add_tree(std::make_shared<HTree>(2, 20));
 	forest->add_tree(std::make_shared<HTree>(3, 5));
