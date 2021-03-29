@@ -8,7 +8,8 @@ For **htree.cc**,
 `get_child` and `path_to` were the only non-trivial functions. For `get_child`, we simply used a `switch` statement to return the appropriate value. For `path_to`, we recursively checked each child node and pushed either RIGHT or LEFT into the `possible_path_t` list.
 
 For **hforest.cc**, `add_tree` adds a tree to the vector representing our forest, and then calls `std::makeheap` on it.
-`pop_tree` returns a tree pointer to what was at the 0th position of our forest vector, and then calls `std::pop_heap`, which is a standard function that removes the top element and remakes the heap.
+`pop_tree` returns a tree pointer to what was at the 0th position of our forest vector, and then calls `vector::erase`, which is a standard function that removes a specified element.
+It then remakes the heap with `std::makeheap`.
 
 **test_htree** constructs a tree of depth 4, and makes several checks:
 
