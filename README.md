@@ -5,7 +5,7 @@
 In order to build our program, just run "make" in our project's directory. "make test" will run our tests. We have a separate test file for hforest and htree.
 
 For htree.cc, 
-`get_child` and `path_to` were the only non-trivial functions. For `get_child`, we simply used a `switch` statement to return the appropriate value. For `path_to`, we recursively checked each child node and pushed either RIGHT or LEFT into the `possible_path_t`
+`get_child` and `path_to` were the only non-trivial functions. For `get_child`, we simply used a `switch` statement to return the appropriate value. For `path_to`, we recursively checked each child node and pushed either RIGHT or LEFT into the `possible_path_t` list.
 
 test_htree constructs a tree of depth 4, and makes several checks:
 
