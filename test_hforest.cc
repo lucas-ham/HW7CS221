@@ -31,7 +31,6 @@ void test_forest(Hforest frst){
 	frst.pop_tree();
 	frst.pop_tree();															//empty tree of all values
 
-	std::cout<<frst.size();
 	assert(frst.size() == 0);											//check that size is empty
 
 	assert(frst.pop_tree() == nullptr);						//test pop_tree on an empty forest, return nullptr
