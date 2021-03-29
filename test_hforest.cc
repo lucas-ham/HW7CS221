@@ -13,14 +13,27 @@ Hforest create_forest(){
 	forest.add_tree(std::make_shared<HTree>(1, 10));
 	forest.add_tree(std::make_shared<HTree>(2, 20));
 	forest.add_tree(std::make_shared<HTree>(3, 5));
-	forest.add_tree(std::make_shared<HTree>(4, 50));
+	forest.add_tree(std::make_shared<HTree>(4, 50));  			//add trees, this also tests the add_tree method
 
 	return forest;
 
 }
 
 void test_forest(Hforest frst){
-	assert((frst.pop_tree())->get_key() == 4);
+	assert((frst.size()) == 4);										//test size of tree
+
+	assert((frst.pop_tree())->get_key() == 4);		//test pop_tree
+
+	assert((frst.size()) == 3);										//test size after pop_tree
+
+	assert((frst.pop_tree())->get_key() == 2);		//test pop_tree again
+
+	frst.pop_tree();
+	frst.pop_tree();															//empty tree of all values
+
+	assert(frst.size() == 0);											//check that size is empty
+
+	assert(frst.pop_tree() == nullptr);						//test pop_tree on an empty forest, return nullptr
 }
 
 
